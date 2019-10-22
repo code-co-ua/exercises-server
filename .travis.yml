@@ -1,0 +1,5 @@
+dist: bionic
+script:
+  - bash update.bash
+services:
+  - docker
