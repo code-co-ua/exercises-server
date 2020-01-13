@@ -12,7 +12,8 @@ WORKDIR /var/www/theia
 
 RUN yarn && yarn theia build
 
-COPY ./nginx.conf  /etc/nginx/nginx.conf
-COPY ./stream.js /etc/nginx/stream.js
+COPY ./nginx  /etc/nginx
+#COPY ./nginx/nginx.conf  /etc/nginx/nginx.conf
+#COPY ./nginx/stream.js /etc/nginx/stream.js
 
 ENTRYPOINT [ "yarn", "theia", "start", "/home/project", "--hostname=0.0.0.0" ]
